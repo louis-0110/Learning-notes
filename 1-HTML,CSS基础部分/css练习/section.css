@@ -1,0 +1,103 @@
+.subnav {
+    margin-top: 81px;
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 60px;
+    background-color: #47464a;
+    min-width: 1200px;
+}
+
+.active::after {
+    content: '';
+    display: inline-block;
+    position: relative;
+    border: 8px solid;
+    border-color: transparent transparent #fff transparent;
+    left: -40px;
+    top: 24px;
+
+}
+
+div.subnav span.active {
+    color: #ef4238;
+    cursor: default;
+}
+
+.subnav span {
+    cursor: pointer;
+    padding: 0 30px;
+    color: #ccc;
+}
+
+.subnav span:hover {
+    color: #fff;
+}
+
+section {
+    width: 1200px;
+    min-width: 1200px;
+    margin: 100px auto 0;
+    font-size: 14px;
+}
+
+section .container {
+    width: 1120px;
+    border: 1px solid #ccc;
+    margin:0 auto;
+    box-sizing: border-box;
+    padding:10px 20px 0;
+}
+
+
+section .container .tags-line .tags-title{
+    position: absolute;
+    padding:10px 0 20px 10px;
+    color:#47464a;
+}
+
+section .container .tags-line  ul{
+    padding-left: 60px;
+    border-bottom: 1px dashed #ccc;
+    margin-bottom: 20px;
+}
+section .container .tags-line  ul li{
+    float: left;
+    width: 90px;
+}
+section .container .tags-line  ul li:hover a{
+    color: tomato;
+}
+
+
+section .container .tags-line  ul li a {
+    display: inline-block;
+    padding:4px 5px;
+}
+body section .container .tags-line  ul li.select a{
+    background-color: tomato;
+    color:#fff;
+    border-radius: 10px;
+}
+
+.movie-list .content ul li{
+    float: left;
+    margin-right: 48px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.movie-list .content ul li:nth-of-type(6n){
+    margin-right: 0px;
+}
+.movie-list .content ul li span{
+    display: block;
+    font-size: 18px;
+}
+.movie-list .content ul li span:nth-of-type(2){
+    color:#ef4238;
+    
+}
+.movie-list .content ul li span:nth-of-type(2)::first-letter{
+    font-size: 30px;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin:0px;
+        padding:0px;
+    }
+
+    body{
+        background-color: #fff;
+    }
+    div{
+        width:100px;
+        height:200px;
+        
+        position:absolute;
+        left:calc(50% - 50px);
+        top:calc(50% - 50px);
+        background:transparent;
+        /* border:1px solid #fff; */
+
+        box-shadow:inset 0px 0px 8px #fff,
+                    inset 10px 0px 30px #f0f,
+                    inset -10px 0px 40px rgb(14, 112, 223),
+                    inset 10px 0px 50px #f0f,
+                    inset -10px 0px 60px rgb(14, 112, 223),
+                    -5px 0px 30px #f0f,
+                    5px 0px 40px rgb(14, 112, 223),
+                    5px 0px 40px #f0f,
+                    -5px 0px 50px rgb(14, 112, 223);
+
+
+                    border-top-left-radius: 100px;
+                    border-bottom-right-radius: 100px;
+    }
+div:nth-of-type(2){
+    left:calc(50% - 100px);
+        top:calc(50% - 100px);
+}
+div:nth-of-type(3){
+    left:calc(50% - 50px);
+        top:calc(50% - 100px);
+}
+div:nth-of-type(4){
+    left:calc(50% - 100px);
+        top:calc(50% - 50px);
+}
+
+
+.demo{
+    position: absolute;
+    width:100px;
+    height: 100px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,.1);
+    transition: all .5s ;
+    top:calc(50% - 50px);
+    left:calc(50% - 50px);
+}
+
+.demo:hover{
+    transform:scale(2,2);
+    box-shadow: 0px 3px 10px rgba(10,10,250,.4);
+}
+
+
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="demo"></div>
+    <script>
+        var oDiv = document.getElementsByTagName('div');
+
+for(var i =0;i < oDiv.length;i ++){
+    (function(i){
+        oDiv[i].onmousedown = function(e){
+            
+            var disX = e.clientX - this.offsetLeft;
+            var disY = e.clientY - this.offsetTop;
+            
+            document.onmousemove = function(e){
+                oDiv[i].style.top = e.clientY - disY + 'px';
+                oDiv[i].style.left = e.clientX - disX + 'px';
+            }
+            document.onmouseup = function(){
+                document.onmousemove = false;
+                document.onmouseup = false;
+            }
+            
+        }
+        
+        oDiv[i].oncontextmenu = function(){
+            return false;
+        }
+    }(i))
+    
+}
+      
+    </script>
+</body>
+</html>

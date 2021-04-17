@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>手风琴</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .wrapper{
+            position: absolute;
+            top:0;
+            bottom:0;
+            left: 0;
+            right: 0;
+            margin:auto;
+            width: 400px;
+            height: 300px;
+            background-color: tomato;
+        }
+        .wrapper .item{
+            float:left;
+            width:100px;
+            background-color: turquoise;
+            border-bottom:2px solid;
+        }
+        .item .option:not(:nth-of-type(1)),
+        .item .option div{
+            display: none;
+        }
+        .active .option:not(:nth-of-type(1)),
+        .active .option div{
+            display: block;
+        }
+
+        
+
+        
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <ul class="item">
+            <li class="option">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+            </li>
+            <li class="option">1-2</li>
+            <li class="option">1-2</li>
+            <li class="option">1-2</li>
+            <li class="option">1-2</li>
+        </ul>
+        <ul  class="item">
+            <li class="option">2-1</li>
+            <li class="option">2-2</li>
+            <li class="option">2-2</li>
+            <li class="option">2-2</li>
+
+        </ul>
+        <ul  class="item">
+            <li class="option">3-1</li>
+            <li class="option">3-2</li>
+            <li class="option">3-2</li>
+            <li class="option">3-2</li>
+
+        </ul>
+        <ul  class="item">
+            <li class="option">4-1</li>
+            
+            <li class="option">4-2</li>
+            <li class="option">4-2</li>
+            <li class="option">4-2</li>
+
+        </ul>
+       
+       
+    </div>
+    <script>
+        var wrap = document.getElementsByTagName('div')[0];
+        var oUl = document.getElementsByTagName('ul');
+        console.log(typeof oUl);
+        var bStop = true;
+        var oUlArr = Array.prototype.slice.call(oUl,0);
+        console.log(typeof oUlArr);
+        oUlArr.forEach(function(ele,index){
+            ele.onmouseenter = function(){
+               
+                    bStop = false;
+                    if(this.classList.contains('active')){
+                    this.classList.remove('active')
+                   
+                }else{
+                    Array.prototype.slice.call(this.parentNode.children,0).forEach(function(ele,index){
+                        ele.classList.remove('active')
+                    })
+                    this.classList.add('active')
+                }
+            }
+            
+        })
+
+
+
+       
+    </script>
+</body>
+</html>

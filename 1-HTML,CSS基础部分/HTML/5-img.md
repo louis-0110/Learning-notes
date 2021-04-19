@@ -20,7 +20,7 @@
 <img usemap='#solarMap'>
 <map name='solarMap'>
     <area shape='circle' coords='圆心坐标 X，Y ，R' href='' target=''>
-    <area shape='rect' coords='左上角，右下角' href='' target=''>
+    <area shape='rect' coords='左上角坐标，右下角坐标' href='' target=''>
     <area shape='poly' coords='x,y,x,y,x,y,x,y,x,y' href='' target=''>
 </map>
 ```

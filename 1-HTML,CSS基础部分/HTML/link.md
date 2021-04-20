@@ -5,6 +5,7 @@
 ```html
 <html>
   <head>
+    <title>Document</title>
     <link href="main.css" rel="stylesheet">
   </head>
 </html>
@@ -16,7 +17,11 @@
 <html>
   <head>
     <style>
-    	
+      .oDiv{
+        width:100px;
+        height:100px;
+        background:red;
+      }
     </style>
   </head>
 </html>

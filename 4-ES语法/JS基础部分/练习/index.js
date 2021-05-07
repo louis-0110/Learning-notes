@@ -4,7 +4,7 @@
  * @Autor: gaoluo
  * @Date: 2021-05-01 09:56:33
  * @LastEditors: gaoluo
- * @LastEditTime: 2021-05-01 09:58:34
+ * @LastEditTime: 2021-05-07 23:01:24
  * @FilePath: /📒笔记/4-ES语法/JS基础部分/练习/index.js
  */
 

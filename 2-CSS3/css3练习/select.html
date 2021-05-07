@@ -1,0 +1,70 @@
+<!--
+ * @Description: 
+ * @Version: 1.0
+ * @Autor: gaoluo
+ * @Date: 2021-05-07 22:49:37
+ * @LastEditors: gaoluo
+ * @LastEditTime: 2021-05-08 00:23:20
+ * @FilePath: /📒笔记/2-CSS3/css3练习/select.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    p:target {
+      background-color: #7fffd4;
+    }
+
+    p:not(:target) {
+      background-color: #f40;
+    }
+
+    p:first-child {
+      /* // 没有任何p元素被选中，因为a是第一个子元素 */
+      background-color: blueviolet;
+    }
+
+    p:last-child {
+      /* // p-t 被选中 */
+      background-color:coral;
+    }
+
+    p:nth-last-child(2) {
+      /* //p-4 被选中 */
+      background-color: cornflowerblue;
+
+    }
+    div > p:nth-child(n+2){
+      background-color: darkblue;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="a-wrap">
+    <a href="#p-1">a-1</a>
+    <a href="#p-2">a-2</a>
+    <a href="#p-3">a-3</a>
+  </div>
+  <div id="demo1">
+    <p id="p-1">p-1</p>
+    <p id="p-2">p-2</p>
+    <p id="p-3">p-3</p>
+  </div>
+  <p id="p-4">p-4</p>
+  <div>
+    <a>a-1</a>
+    <!-- <p>p-1</p> -->
+    <p>p-2</p>
+    <p>p-3</p>
+    <p>p-4</p>
+    <p>p-5</p>
+  </div>
+</body>
+
+</html>

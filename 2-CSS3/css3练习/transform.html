@@ -1,0 +1,54 @@
+<!--
+ * @Description: 
+ * @Version: 1.0
+ * @Autor: gaoluo
+ * @Date: 2021-05-10 11:58:43
+ * @LastEditors: gaoluo
+ * @LastEditTime: 2021-05-10 23:03:12
+ * @FilePath: /📒笔记/2-CSS3/css3练习/transform.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  
+    div:first-of-type{
+      width: 100px;
+      height: 100px;
+      background-color: aquamarine;
+      border:2px solid;
+      color:bisque;
+      transform: matrix(1,1,1,1,0,1);
+      transition: all 1s;
+    }
+    div:nth-of-type(2){
+      width: 100px;
+      height: 300px;
+      background-color: chocolate;
+      transition: all 6s steps(60, end) 1s;
+      animation:identifier 500ms ease-out infinite  alternate;
+    }
+    div:nth-of-type(2):hover{
+      background-color: cyan;
+      transform: rotate(360deg);
+    }
+
+    @keyframes identifier {
+      from{
+        width: 120px;
+      }
+      to{
+        width: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div>------</div>
+  <div>222</div>
+</body>
+</html>

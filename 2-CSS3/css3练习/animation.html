@@ -1,0 +1,44 @@
+<!--
+ * @Description: 
+ * @Version: 1.0
+ * @Autor: gaoluo
+ * @Date: 2021-05-10 10:47:50
+ * @LastEditors: gaoluo
+ * @LastEditTime: 2021-05-10 11:45:31
+ * @FilePath: /📒笔记/2-CSS3/css3练习/animation.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      width: 100px;
+      height: 100px;
+      background-color: aquamarine;
+      border-radius: 50%;
+      border:2px solid;
+      color:bisque;
+      font-size: 0;
+      position: fixed;
+      animation: run 2s steps(60,start) 1s infinite alternate-reverse;
+    }
+    @keyframes run {
+      0%{
+        left:0;
+        top:0;
+      }
+      100%{
+        left: 900px;
+        top: 900px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+</body>
+</html>

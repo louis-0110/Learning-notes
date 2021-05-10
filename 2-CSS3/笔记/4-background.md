@@ -70,8 +70,36 @@ background-position:center center;
 
 background-position:0 0 ;
 
-background-position: 0 ; 等同于 background-position: 0 center;
+background-position: 0 ; /* 等同于 background-position: 0 center;*/
 background-position: center center 10px;
 background-position: center 20px bottom 20px;
 ```
+
+6. background-attachment
+
+   **定义滚动时背景图像相对于谁固定。**
+
+   - fixed：背景图像相对于视口（viewport）固定。元素相当于显示这个背景图的显示区域
+
+   - scroll：背景图像相对于元素固定，也就是说当元素内容滚动时背景图像不会跟着滚动，因为背景图像总是要跟着元素本身。但会随元素的祖先元素或窗体一起滚动。
+
+   - local：背景图像相对于元素内容固定，也就是说当元素随元素滚动时背景图像也会跟着滚动，因为背景图像总是要跟着内容。（CSS3）
+
+   **如果 background-attachment设置为fixed ;那么 background-size 也会相对于视口（viewport）进行计算**
+
+```css
+background-attachment:scroll; 默认
+```
+
+7. background-size
+   - px
+   - %
+   - cover (铺满)
+   - contain（包含）
+
+```css
+background-size:100px 100px;
+```
+
+
 

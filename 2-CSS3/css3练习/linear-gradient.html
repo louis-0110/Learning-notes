@@ -1,0 +1,45 @@
+<!--
+ * @Description: 
+ * @Version: 1.0
+ * @Autor: gaoluo
+ * @Date: 2021-05-09 13:11:26
+ * @LastEditors: gaoluo
+ * @LastEditTime: 2021-05-09 13:42:21
+ * @FilePath: /📒笔记/2-CSS3/css3练习/linear-gradient.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      --width: 200px;
+      --height: 200px;
+      width: var(--width);
+      height: var(--height);
+      position: absolute;
+      left: calc(50% - 100px);
+      top: calc(50% - 100px);
+      background-color: aquamarine;
+      /* background-repeat: repeat-x; */
+      background-size: 20px 20px;
+      background-position: 0 0, 10px 10px;
+      transition: all 1s;
+      background-image: radial-gradient(circle 10px, red, yellow, transparent),
+        radial-gradient(circle 10px, red, yellow, transparent);
+    }
+  </style>
+
+</head>
+
+<body>
+  <div>
+    123
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!--
+ * @Description: 
+ * @Version: 1.0
+ * @Autor: gaoluo
+ * @Date: 2021-05-13 08:31:48
+ * @LastEditors: gaoluo
+ * @LastEditTime: 2021-05-13 08:46:06
+ * @FilePath: /📒笔记/性能/demo/字符串.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var start = new Date();
+    var str = "";
+    for (var i = 0; i < 1000000; i++) {
+      str = str + "test";
+    }
+    var end = new Date();
+    document.write("+拼接字符串，耗时:" + (end.getMilliseconds() - start.getMilliseconds()));
+    document.write("<br/>");
+    var begin = new Date();
+    var arry = new Array();
+    for (var i = 0; i < 1000000; i++) {
+      arry.push("test");
+    }
+    arry.join("");
+    var stop = new Date();
+    document.write("数组方式拼接字符串，耗时:" + (stop.getMilliseconds() - begin.getMilliseconds()));
+    var begin1 = new Date();
+    var arry1 = new Array();
+    var str = '';
+    for (var i = 0; i < 1000000; i++) {
+      arry1.push("test");
+    }
+    str.concat(arry1)
+    var stop1 = new Date();
+    document.write("数组方式拼接字符串，耗时:" + (stop1.getMilliseconds() - begin1.getMilliseconds()));
+  </script>
+</body>
+
+</html>

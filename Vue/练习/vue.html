@@ -1,0 +1,100 @@
+<!--
+ * @Description: 
+ * @Version: 1.0
+ * @Autor: gaoluo
+ * @Date: 2021-05-11 23:42:09
+ * @LastEditors: gaoluo
+ * @LastEditTime: 2021-05-12 23:38:35
+ * @FilePath: /📒笔记/Vue/练习/vue.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    :root,
+    body{
+      height: 100%;
+      margin:0;
+      padding:0;
+    }
+    #app{
+      height: 100%;
+      width: 100%;
+    }
+    [v-cloak]{
+      display: none;
+    }
+    .demo{
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+  <div id='app' v-cloak>
+    <div class="demo" :style="[{backgroundColor:'#f40'},{border:'1px solid'}]" @click='jiao'
+    >{{myName}}</div>
+    <head-nav title='123123title'>
+      <template #sss>
+        <p :style="{fontSize:'20px',color:'red'}">sdf</p>
+      </template>
+     
+    </head-nav></head-nav>
+  </div>
+
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+ Vue.component('head-nav',{
+      data(){
+        return{
+
+        }
+      },
+      props:{
+        title:{
+          type:String,
+          
+        }
+      },
+      template:`<div class="wrap-demo2">
+      <span>{{title}}</span>
+      <slot name='sss'></slot>
+    </div>`
+    })
+
+    const vm = new Vue({
+      data:{
+        message:'hello world!',
+        firstName:"gao",
+        lastName:'luo'
+      },
+      methods:{
+        jiao(){
+          alert(this.name);
+        }
+
+      },
+      computed: {
+        myName:{
+          get(){
+            return this.firstName.concat(' '+this.lastName);
+
+          },
+          set(newv){
+             [this.firstName,this.lastName]= newv.split(' ');
+          }
+        }
+      }
+    }).$mount('#app')
+
+   
+
+  </script>
+</body>
+</html>

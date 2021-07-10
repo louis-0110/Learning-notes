@@ -1,0 +1,42 @@
+<!--
+ * @Description: 
+ * @Version: 1.0
+ * @Autor: gaoluo
+ * @Date: 2021-07-09 16:09:17
+ * @LastEditors: gaoluo
+ * @LastEditTime: 2021-07-09 17:24:04
+ * @FilePath: /📒笔记/性能/优化方向/index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+  </style>
+  <script src='./qrcode.js'></script>
+
+</head>
+
+<body>
+
+  <div id="qrcode">
+
+  </div>
+  <script>
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+    text: "http://jindo.dev.naver.com/collie",
+    width: 128,
+    height: 328,
+    colorDark : "#000",
+    colorLight : "#fff",
+    correctLevel : QRCode.CorrectLevel.M
+});
+  </script>
+</body>
+
+</html>

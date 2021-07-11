@@ -26,7 +26,8 @@ Vue.use(VueRouter);
 
 export default new VueRouter({
   routes,
-  mode:'history'
+  mode:'history',
+  linkActiveClass:'active'  // 修改按钮活跃的类名
 })
 ```
 
@@ -35,14 +36,35 @@ export default new VueRouter({
 ```js
 const routes = [
   {
-    name:'',
-    path:'',
-    component:()=> import()
+    path:'/',
+    redirect:'/home' // 重定向
   },
   {
-    name:'',
-    path:'',
-    component:()=> import()
+    name:'home',
+    path:'/home',
+    component:()=> import('@/views/home'),
+    children:[
+      {
+      	path:'/',
+        redirect:'news'
+  	  },
+      {
+      	name:'news',
+      	path:'news',
+      	component: () => import('@/views/HomeNews')
+  	  },
+      {
+       name:'messages',
+      	path:'messages',
+      	component: () => import('@/views/HomeMessages')     
+      }
+      ]
+      
+  },
+  {
+    name:'about',
+    path:'/hbout',
+    component:()=> import('@/views/about')
   }
 ]
 

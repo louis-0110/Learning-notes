@@ -15,7 +15,13 @@
      state:{
        count:0
      },
-     me
+     mutations,
+     actions,
+     getters,
+     moduls:{
+       a:modulesA,
+       b:modulesB
+     }
    })
    ```
 

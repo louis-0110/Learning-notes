@@ -1,0 +1,132 @@
+<!--
+ * @Description: 
+ * @Version: 1.0
+ * @Autor: gaoluo
+ * @Date: 2021-07-14 10:12:48
+ * @LastEditors: gaoluo
+ * @LastEditTime: 2021-08-16 10:12:32
+ * @FilePath: /-总结/PDFupload.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <label for="file">
+    <div>上传文件</div>
+  </label>
+  <input type="file" name="file" id="file" style="display: none;" accept="application/pdf">
+  <embed src="" type="application/pdf" width="100%" height="100%"></embed>
+  <object data="" type="application/pdf" width="100%" height="100%"></object>
+  <a href="" download="123.pdf">download</a>
+  <iframe src="" frameborder="0" type="application/pdf"></iframe>
+</body>
+<script>
+  const inpt = document.querySelector('input')
+  const em = document.querySelector('embed')
+  const iframe = document.querySelector('iframe')
+  const img = document.querySelector('img')
+  const object = document.querySelector('object')
+  const a = document.querySelector('a')
+  inpt.onchange = function () {
+
+    // var blob = window.URL.createObjectURL(inpt.files[0]);
+
+    inpt.files[0].arrayBuffer().then(res => {
+      // object.data = "data:application/pdf;base64," + arrayBufferToBase64(res);
+
+      var blob = new Blob([res], {
+        type: 'application/pdf'
+      })
+      blob = window.URL.createObjectURL(blob)
+      em.src = blob;
+      a.href = blob;
+      // window.open(blob)
+      download(res);
+
+      var c = new XMLHttpRequest;
+      c.open("GET", "data:application/octet-stream;base64," + arrayBufferToBase64(res));
+      c.responseType = "arraybuffer";
+      c.onload = function (a) {
+        // a = new Uint8Array(c.response);
+        download(c.response)
+      }
+      c.send()
+    });
+  }
+  // const formData = new FormData();
+  // formData.append('file', inpt.files[0])
+
+  function download(blob, fileName = 'record.pdf') {
+    let blobData = new Blob([blob], {
+      type: 'application/pdf'
+    });
+    const url = window.URL.createObjectURL(blobData);
+    const a = document.createElement('a');
+
+    a.style = 'display: none';
+    a.href = url;
+    a.download = fileName;
+    document.body.appendChild(a);
+    a.click();
+
+    document.body.removeChild(a)
+    window.URL.revokeObjectURL(url)
+  }
+
+  // function arrayBufferToBase64(buffer) {
+  //   var binary = '';
+  //   var bytes = new Uint8Array(buffer);
+  //   var len = bytes.byteLength;
+  //   for (var i = 0; i < len; i++) {
+  //     binary += String.fromCharCode(bytes[i]);
+  //   }
+  //   return window.btoa(binary);
+  // }
+
+  function arrayBufferToBase64(array) {
+    array = new Uint8Array(array);
+    var length = array.byteLength;
+    var table = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
+      'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
+      'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X',
+      'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f',
+      'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
+      'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
+      'w', 'x', 'y', 'z', '0', '1', '2', '3',
+      '4', '5', '6', '7', '8', '9', '+', '/'
+    ];
+    var base64Str = '';
+    for (var i = 0; length - i >= 3; i += 3) {
+      var num1 = array[i];
+      var num2 = array[i + 1];
+      var num3 = array[i + 2];
+      base64Str += table[num1 >>> 2] +
+        table[((num1 & 0b11) << 4) | (num2 >>> 4)] +
+        table[((num2 & 0b1111) << 2) | (num3 >>> 6)] +
+        table[num3 & 0b111111];
+    }
+    var lastByte = length - i;
+    if (lastByte === 1) {
+      var lastNum1 = array[i];
+      base64Str += table[lastNum1 >>> 2] + table[((lastNum1 & 0b11) << 4)] + '==';
+    } else if (lastByte === 2) {
+      var lastNum1 = array[i];
+      var lastNum2 = array[i + 1];
+      base64Str += table[lastNum1 >>> 2] +
+        table[((lastNum1 & 0b11) << 4) | (lastNum2 >>> 4)] +
+        table[(lastNum2 & 0b1111) << 2] +
+        '=';
+    }
+    return base64Str;
+  }
+</script>
+</body>
+
+</html>

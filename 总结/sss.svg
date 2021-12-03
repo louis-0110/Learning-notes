@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="124px" height="95px">
+  <defs>
+    <filter filterUnits="userSpaceOnUse" id="Filter_0" x="0px" y="0px" width="124px" height="95px">
+      <feOffset in="SourceAlpha" dx="0" dy="8" />
+      <feGaussianBlur result="blurOut" stdDeviation="0" />
+      <feFlood flood-color="rgb(70, 104, 153)" result="floodOut" />
+      <feComposite operator="atop" in="floodOut" in2="blurOut" />
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.49" />
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="Filter_1">
+      <feFlood flood-color="rgb(255, 255, 255)" flood-opacity="1" result="floodOut" />
+      <feComposite operator="atop" in="floodOut" in2="SourceGraphic" result="compOut" />
+      <feBlend mode="normal" in="compOut" in2="SourceGraphic" />
+    </filter>
+
+  </defs>
+  <g filter="url(#Filter_0)">
+    <g filter="url(#Filter_1)">
+      <text kerning="auto" font-family="Adobe Heiti Std" fill="rgb(0, 0, 0)"
+        transform="matrix( 0.86602540378444, 0.5, -0.5, 0.86602540378444,-0.03064554271089, 26.9002297062711)"
+        font-size="44px">
+        <tspan font-size="44px" font-family="PingFang" fill="#FFFFFF">&#22788;&#29702;&#20013;</tspan>
+      </text>
+    </g>
+  </g>
+</svg>

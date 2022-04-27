@@ -32,10 +32,11 @@
 ```html
 <from>
 	<select id='' name='province'>
-    <option>上海</option>
-    <option>北京</option>
-    <option>南京</option>
-    <option>广州</option>
+    <option value="" disabled selected>请选择城市</option>
+    <option value="shanghai">上海</option>
+    <option value="beijing">北京</option>
+    <option value="nanjing">南京</option>
+    <option value="guangzhou">广州</option>
   </select>	
 </from>
 ```

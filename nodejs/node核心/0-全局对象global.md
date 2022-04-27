@@ -19,8 +19,8 @@ global.global === global
    -  env 获取环境变量
    -  platfrom （操作系统平台win32 、darwin）
 
-```nodejs
-process.kell();
+```js
+process.kill();
 process.cwd();
 process.exit();
 

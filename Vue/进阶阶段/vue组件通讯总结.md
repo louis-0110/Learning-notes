@@ -2,9 +2,7 @@
 
 一. 父子组件通讯
 
-prop
-
-$event
+props  $event
 
 style 和 class 会放在子组件的根元素标签上
 

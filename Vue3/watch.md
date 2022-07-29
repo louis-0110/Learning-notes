@@ -17,7 +17,9 @@ watch(count,(newV,oldV)=>{
 })
 
 //一次监听多个值
-watch([count,()=>state.count], )
+watch([count,()=>state.count], ([newV1,newV2],[oldV1,oldV2])=>{
+	console.log('数据改变了！')
+})
 ```
 
 

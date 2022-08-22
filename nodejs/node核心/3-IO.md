@@ -1,4 +1,4 @@
-## I/0:input output
+## I/O:input output
 
 对外部设备的输入输出
 
@@ -10,10 +10,25 @@ IO的速度往往低于内存和cpu的交互速度
 
 ## FS
 
-1. readFile 读文件
+1. readFile 读文件 （readFileSync 同步 一般用于初始化操作，会阻塞代码执行）
 
 ```js
-fs.readfile()
+const { readFile ，promises } = require('fs')
+
+//fs.readfile()
+
+readFile(
+  path.resolve(__dirname, './server.js'),
+  {
+    encoding: 'utf-8',
+  },
+  (err, content) => {
+    console.log(content)
+  }
+)
+
+//
+promises.readFile()
 ```
 
 2. writeFile 写文件

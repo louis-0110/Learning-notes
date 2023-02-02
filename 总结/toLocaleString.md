@@ -3,7 +3,7 @@ toLocaleString(locale, options)
 
 //千分位显示
 const num = 123456.456; 
-num.toLocaleString(num) //'123,456.456'
+num.toLocaleString() //'123,456.456'
 
 //显示.00
 const num = 236; 

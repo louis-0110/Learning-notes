@@ -28,22 +28,22 @@ Css规则 = 选择器 + 声明块 
 
  ## CSS代码书写位置
 
- 1. 内部样式表 
-    ```html
-    <style>
-        
-    </style>
-    ```
+内部样式表 
+```html
+<style>
+    
+</style>
+```
 
- 2. 内联样式
-    ```html
-    <div style='width:100px;' > </div>
-    ```
+内联样式
+```html
+<div style='width:100px;' > </div>
+```
 
- 3. 外部样式表[推荐]
-    ```html
-    <link href='index.css'>
-    ```
+外部样式表[推荐]
+```html
+<link href='index.css'>
+```
 
 1).外部样式可以解决多页面样式重复的问题
 2).有利于浏览器缓存，从而提高页面响应速度

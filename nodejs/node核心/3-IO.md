@@ -40,4 +40,4 @@ promises.readFile()
 5. mkdir() 创建目录
 
 6. access() 访问权限
-7. unlink()
+7. unlink() 删除文件

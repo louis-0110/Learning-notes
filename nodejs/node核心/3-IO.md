@@ -33,11 +33,24 @@ promises.readFile()
 
 2. writeFile 写文件
 
-3. stat 文件详情  .isDirectory() true / false 是否是目录
+3. stat 文件详情  .isDirectory() .isFile()  true / false 是否是目录
 
 4. readdir() 返回文件夹里面的子文件名/子文件夹名
 
 5. mkdir() 创建目录
 
 6. access() 访问权限
+
 7. unlink() 删除文件
+
+```js
+fs.stat(path.resolve(__dirname, './src/assets'), (err, state) => {
+  console.log(state.isDirectory(), state.isFile())
+})
+
+fs.readdir(path.resolve(__dirname, './src/'), (err, state) => {
+  console.log(state) //[ '.DS_Store', 'abc.cjs', 'assets', 'test.cjs' ]
+})
+
+```
+

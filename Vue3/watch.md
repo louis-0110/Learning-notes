@@ -2,7 +2,7 @@
 
 
 
-```vue
+```js
 const count = reg(0);
 const state = reactive({count:0})
 
@@ -25,3 +25,4 @@ watch([count,()=>state.count], ([newV1,newV2],[oldV1,oldV2])=>{
 
 
 1. 当数据改改变时才会执行
+

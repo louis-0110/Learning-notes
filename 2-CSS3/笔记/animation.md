@@ -62,3 +62,40 @@ div{
 > both 开始时对象状态是动画第一帧的状态，结束时对象状态是动画最后一帧的状态
 
 ```css
+@keyframes jumps {
+  0% {
+    transform: translate(0)
+  }
+
+  10% {
+    transform: translateY(5px) scaleX(1.2) scaleY(.8)
+  }
+
+  30% {
+    transform: translateY(-13px) scaleX(1) scaleY(1) rotate(5deg)
+  }
+
+  50% {
+    transform: translateY(0) scale(1) rotate(0)
+  }
+
+  55% {
+    transform: translateY(0) scaleX(1.1) scaleY(.9) rotate(0)
+  }
+
+  70% {
+    transform: translateY(-4px) scaleX(1) scaleY(1) rotate(-2deg)
+  }
+
+  80% {
+    transform: translateY(0) scaleX(1) scaleY(1) rotate(0)
+  }
+
+  85% {
+    transform: translateY(0) scaleX(1.05) scaleY(.95) rotate(0)
+  }
+
+  to {
+    transform: translateY(0) scaleX(1) scaleY(1)
+  }
+}

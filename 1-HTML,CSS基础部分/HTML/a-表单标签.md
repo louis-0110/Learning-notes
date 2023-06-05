@@ -17,7 +17,6 @@
 
 ```html
 <from>
-	
   male:<input type='radio' name='sex' value='male' checked>
   famale:<input type='radio' name='sex' value='female'>
 </from>
